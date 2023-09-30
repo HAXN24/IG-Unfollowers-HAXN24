@@ -1,25 +1,86 @@
 import React, { useState, useEffect } from "react";
-import followers from "../dist/followers_1.json";
-import following from "../dist/following.json";
 
 function App() {
   const [followersArray, setFollowersArray] = useState([]);
   const [followingArray, setFollowingArray] = useState([]);
 
-  useEffect(() => {
-    const newFollowersArray = followers.map(
-      (item) => item.string_list_data[0]?.value,
-    );
-    const newFollowingArray = following.relationships_following.map(
-      (item) => item.string_list_data[0]?.value,
-    );
+  // Function to handle file upload and set state
+  const handleUploadFollowers = (event, setArray) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const content = e.target.result;
+        try {
+          const parsedJson = JSON.parse(content);
+          const newArray = parsedJson.map(
+            (item) => item.string_list_data[0]?.value,
+          );
+          setArray(newArray);
+        } catch (error) {
+          console.error("Invalid JSON file:", error);
+        }
+      };
+      reader.readAsText(file);
+    }
+  };
 
-    setFollowersArray(newFollowersArray);
-    setFollowingArray(newFollowingArray);
-  }, []);
+  const handleUploadFollowing = (event, setArray) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const content = e.target.result;
+        try {
+          const parsedJson = JSON.parse(content);
+          const newArray = parsedJson.relationships_following.map(
+            (item) => item.string_list_data[0]?.value,
+          );
+          setArray(newArray);
+        } catch (error) {
+          console.error("Invalid JSON file:", error);
+        }
+      };
+      reader.readAsText(file);
+    }
+  };
+
   return (
     <>
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center mt-10">
+        <div className="w-full flex items-center justify-evenly md:w-1/2 md:gap-x-3">
+          <div className="text-center">
+            <label
+              className="block mb-2 text-sm font-medium text-gray-900"
+              htmlFor="file_input"
+            >
+              Upload "followers_1" file
+            </label>
+            <input
+              className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+              id="file_input"
+              type="file"
+              accept=".json"
+              onChange={(e) => handleUploadFollowers(e, setFollowersArray)}
+              placeholder="Upload Followers JSON"
+            />
+          </div>
+          <div className="text-center">
+            <label
+              className="block mb-2 text-sm font-medium text-gray-900"
+              htmlFor="file_input"
+            >
+              Upload "following" file
+            </label>
+            <input
+              className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+              type="file"
+              accept=".json"
+              onChange={(e) => handleUploadFollowing(e, setFollowingArray)}
+              placeholder="Upload Following JSON"
+            />
+          </div>
+        </div>
         <div className="flex items-center justify-center mt-4">
           <NotFollowing followers={followersArray} following={followingArray} />
         </div>
@@ -72,13 +133,13 @@ function NotFollowing({ followers, following }) {
   );
 
   return (
-    <ul className="grid-custom gap-3">
+    <ul className="flex flex-col  lg:grid lg:grid-cols-12 lg:gap-3">
       <span className="text-xl text-bold col-span-12 text-center">
         Not Following You Back:
       </span>
       {uniqueFollowing.map((value, index) => (
         <li
-          className="flex flex-col text-xl p-3 text-center border-2 bg-blue-300 gap-y-2"
+          className="flex flex-col text-xl p-5 text-center border-2 bg-blue-300 gap-y-2"
           key={index}
         >
           {value}
