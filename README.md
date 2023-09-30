@@ -5,10 +5,13 @@ NOTE: You have to download your instagram profile's json file.
 
 <h2>Features:</h2>
 
-•Import your downloaded Instagram JSON files.\
+*Updated:No longer restricted to pre-defined JSON files. Simply upload your
+JSON file and let the app do the work. 9/30/2023*
+
+•Upload your downloaded Instagram JSON files.\
 •Display the list of followers and followings.\
 •Compare the lists to identify users who don't follow you back.\
-•Provides direct links to each Instagram profile for easy navigation.\
+•Provides direct links to each Instagram profile for easy navigation.
 
 <h2>Dependencies:</h2>
 
@@ -20,6 +23,7 @@ NOTE: You have to download your instagram profile's json file.
 
 1.) Download your Instagram data through the Instagram app.\
 2.)Import the followers and following JSON files into the application.\
-3.)View the list of accounts that do not follow you back.\
+3.)View the list of accounts that do not follow you back.
 
+![jsonUpload.png](src%2Fassets%2FjsonUpload.png)
 ![demo.png](src%2Fassets%2Fdemo.png)
