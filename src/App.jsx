@@ -94,7 +94,7 @@ function App() {
           height="640"
           allowFullScreen
           frameBorder="0"
-          className="w-1/2 p-3 border-8 mt-12"
+          className="w-full p-3 border-8 mt-12 lg:w-1/2"
         ></iframe>
       </div>
     </>
