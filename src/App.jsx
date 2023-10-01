@@ -88,6 +88,14 @@ function App() {
           <Followers followers={followersArray} />
           <Following following={followingArray} />
         </div>
+        <iframe
+          src="https://scribehow.com/embed/How_to_check_users_not_following_you_on_Instagram__LBoX-PFbQMKfM7s10gPTQQ"
+          width="100%"
+          height="640"
+          allowFullScreen
+          frameBorder="0"
+          className="w-1/2 p-3 border-8 mt-12"
+        ></iframe>
       </div>
     </>
   );
