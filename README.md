@@ -1,7 +1,7 @@
 # ig-unfollowers-HAXN24
 
-Practice case for React-based web application that allows you to see users who are not following you back.
-NOTE: You have to download your instagram profile's json file.
+Practice case for React-based web application that allows you to see users who are not following you back.\
+*NOTE: You have to download your instagram's following and followers ALL TIME json file.*
 
 <h2>Features:</h2>
 
