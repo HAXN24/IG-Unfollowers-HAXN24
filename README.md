@@ -27,5 +27,5 @@ JSON file and let the app do the work. 9/30/2023*
 
 DEMO IS LIVE: https://haxn24.github.io/IG-Unfollowers-HAXN24/
 
-![demo.png](src%2Fassets%2Fdemo.png)
 ![demo2.png](src%2Fassets%2Fdemo2.png)
+![demo.png](src%2Fassets%2Fdemo.png)
