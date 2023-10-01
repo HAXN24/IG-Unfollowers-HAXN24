@@ -5,6 +5,8 @@ Practice case for React-based web application that allows you to see users who a
 
 <h2>Features:</h2>
 
+*Updated: Deployed to github pages! Added instructions on how to download the json files from instagram. 10/1/2023*
+
 *Updated:No longer restricted to pre-defined JSON files. Simply upload your
 JSON file and let the app do the work. 9/30/2023*
 
