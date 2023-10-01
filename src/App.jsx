@@ -133,19 +133,20 @@ function NotFollowing({ followers, following }) {
   );
 
   return (
-    <ul className="flex flex-col  lg:grid lg:grid-cols-12 lg:gap-3">
-      <span className="text-xl text-bold col-span-12 text-center">
+    <ul className="flex flex-col md:grid md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 md:gap-3 w-full">
+      <span className="text-xl font-bold col-span-full text-center md:col-span-1 lg:col-span-2 xl:col-span-3">
         Not Following You Back:
       </span>
       {uniqueFollowing.map((value, index) => (
         <li
-          className="flex flex-col text-xl p-5 text-center border-2 bg-blue-300 gap-y-2"
+          className="flex flex-col text-xl p-5 text-center border-2 bg-blue-300 gap-y-2 w-full"
           key={index}
         >
           {value}
           <a
             href={`https://www.instagram.com/${value}`}
             target="_blank"
+            rel="noopener noreferrer"
             className="p-1 rounded-lg bg-blue-100 text-sm"
           >
             Click for Profile
