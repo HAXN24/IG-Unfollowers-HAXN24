@@ -54,7 +54,7 @@ function App() {
               className="block mb-2 text-sm font-medium text-gray-900"
               htmlFor="file_input"
             >
-              Upload "followers_1" file
+              Upload "followers_1.json" file
             </label>
             <input
               className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
@@ -70,7 +70,7 @@ function App() {
               className="block mb-2 text-sm font-medium text-gray-900"
               htmlFor="file_input"
             >
-              Upload "following" file
+              Upload "following.json" file
             </label>
             <input
               className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
